@@ -71,7 +71,9 @@ function App() {
 	};
 
 	let putBack = () => {
-		if (expression.length >= 1) {
+		if (prev == "ANS") {
+			setExpression(0);
+		} else if (expression.length >= 1) {
 			setExpression(expression.slice(0, -1));
 		}
 		setPrev("DEL");
