@@ -35,11 +35,15 @@ function App() {
 	];
 
 	let evalateExpression = () => {
-		if (prev != "OP") {
-			let evaluatedValue = eval(expression);
-			setOldExpression(expression + " = ");
-			setExpression(String(evaluatedValue));
-			setPrev("ANS");
+		try {
+			if (prev != "OP") {
+				let evaluatedValue = eval(expression);
+				setOldExpression(expression + " = ");
+				setExpression(String(evaluatedValue));
+				setPrev("ANS");
+			}
+		} catch {
+			console.log("error occured!");
 		}
 	};
 
